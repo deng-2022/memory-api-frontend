@@ -36,7 +36,13 @@ export const errorConfig: RequestConfig = {
 =======
     process.env.NODE_ENV === 'production' ? 'http://120.55.62.195:8084' : 'http://localhost:8084',
 >>>>>>> d0d0c54 (基本功能完成 壁纸浏览 查看在线用户信息)
+<<<<<<< HEAD
 >>>>>>> 0c1e93a (基本功能完成 壁纸浏览 查看在线用户信息)
+=======
+=======
+  baseURL: 'http://localhost:8101',
+>>>>>>> dea6872 (前端框架构建完成 用户信息获取 接口信息获取完成)
+>>>>>>> 06b7559 (前端框架构建完成 用户信息获取 接口信息获取完成)
   withCredentials: true,
   // 错误处理： umi@3 的错误处理方案。
   errorConfig: {
@@ -105,7 +111,11 @@ export const errorConfig: RequestConfig = {
       console.log(process.env.NODE_ENV);
 
 =======
+<<<<<<< HEAD
 >>>>>>> 7422dd8 (前端框架构建完成 用户信息获取 接口信息获取完成)
+=======
+>>>>>>> dea6872 (前端框架构建完成 用户信息获取 接口信息获取完成)
+>>>>>>> 06b7559 (前端框架构建完成 用户信息获取 接口信息获取完成)
       // 拦截请求配置，进行个性化处理。
       const url = config?.url?.concat('?token = 123');
       return { ...config, url };
@@ -118,7 +128,11 @@ export const errorConfig: RequestConfig = {
     (response: any) => {
 =======
     (response) => {
+<<<<<<< HEAD
 >>>>>>> 7422dd8 (前端框架构建完成 用户信息获取 接口信息获取完成)
+=======
+>>>>>>> dea6872 (前端框架构建完成 用户信息获取 接口信息获取完成)
+>>>>>>> 06b7559 (前端框架构建完成 用户信息获取 接口信息获取完成)
       // 拦截响应数据，进行个性化处理
       const { data } = response as unknown as ResponseStructure;
 

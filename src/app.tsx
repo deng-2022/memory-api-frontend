@@ -5,7 +5,11 @@ import type { RunTimeLayoutConfig } from '@umijs/max';
 import { history, Link } from '@umijs/max';
 import { AvatarDropdown, AvatarName } from './components/RightContent/AvatarDropdown';
 import { errorConfig } from './requestErrorConfig';
+<<<<<<< HEAD
 import { getLoginUserUsingGET } from './services/pic-memories/userController';
+=======
+import { getLoginUserUsingGET } from './services/memory-api/userController';
+>>>>>>> dea6872 (前端框架构建完成 用户信息获取 接口信息获取完成)
 const isDev = process.env.NODE_ENV === 'development';
 const loginPath = '/user/login';
 const registerPath = '/user/register';

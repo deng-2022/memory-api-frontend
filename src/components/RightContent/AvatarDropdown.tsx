@@ -22,7 +22,11 @@ export const AvatarName = () => {
 =======
   const { currentUser } = initialState || {};
   return <span className="anticon">{currentUser?.name}</span>;
+<<<<<<< HEAD
 >>>>>>> 7422dd8 (前端框架构建完成 用户信息获取 接口信息获取完成)
+=======
+>>>>>>> dea6872 (前端框架构建完成 用户信息获取 接口信息获取完成)
+>>>>>>> 06b7559 (前端框架构建完成 用户信息获取 接口信息获取完成)
 };
 
 export const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu, children }) => {
@@ -101,7 +105,11 @@ export const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu, childre
   const { currentUser } = initialState;
 
   if (!currentUser || !currentUser.name) {
+<<<<<<< HEAD
 >>>>>>> 7422dd8 (前端框架构建完成 用户信息获取 接口信息获取完成)
+=======
+>>>>>>> dea6872 (前端框架构建完成 用户信息获取 接口信息获取完成)
+>>>>>>> 06b7559 (前端框架构建完成 用户信息获取 接口信息获取完成)
     return loading;
   }
 

@@ -27,7 +27,11 @@ check-circle
 warning
 user
 highlight
+<<<<<<< HEAD
 >>>>>>> 7422dd8 (前端框架构建完成 用户信息获取 接口信息获取完成)
+=======
+>>>>>>> dea6872 (前端框架构建完成 用户信息获取 接口信息获取完成)
+>>>>>>> 06b7559 (前端框架构建完成 用户信息获取 接口信息获取完成)
  */
 export default [
   {
@@ -76,6 +80,7 @@ export default [
   //用户信息页
   {
     name: '用户信息',
+<<<<<<< HEAD
     icon: 'user',
     path: '/user/list',
 <<<<<<< HEAD
@@ -139,6 +144,21 @@ export default [
 >>>>>>> d0d0c54 (基本功能完成 壁纸浏览 查看在线用户信息)
   },
   //上传页
+=======
+    access: 'canAdmin',
+    icon: 'user',
+    path: '/user/list',
+    component: './TableList/User',
+  },
+
+  //接口信息页
+  {
+    name: '接口信息',
+    icon: 'user',
+    path: '/interfaceInfo/list',
+    component: './TableList/InterfaceInfo',
+  },
+>>>>>>> dea6872 (前端框架构建完成 用户信息获取 接口信息获取完成)
 
   {
     path: '/',

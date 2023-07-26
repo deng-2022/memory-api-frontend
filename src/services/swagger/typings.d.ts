@@ -97,4 +97,19 @@ declare namespace API {
     /** ID of pet to update */
     petId: number;
   };
+<<<<<<< HEAD
+=======
+
+  type User = {
+    id?: number;
+    username?: string;
+    firstName?: string;
+    lastName?: string;
+    email?: string;
+    password?: string;
+    phone?: string;
+    /** User Status */
+    userStatus?: number;
+  };
+>>>>>>> dea6872 (前端框架构建完成 用户信息获取 接口信息获取完成)
 }
