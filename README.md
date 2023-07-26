@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 =======
@@ -8,6 +9,12 @@
 
 #### 介绍
 API开放平台-前端
+=======
+# memory-api-frontend
+
+#### 介绍
+Memory API 接口开放平台
+>>>>>>> 38501fb (Initial commit)
 
 #### 软件架构
 软件架构说明
@@ -41,6 +48,7 @@ API开放平台-前端
 4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
 5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
 6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 =======
@@ -107,3 +115,5 @@ You can view full document on our [official website](https://pro.ant.design). An
 >>>>>>> 4ac1cbb (前端框架构建完成)
 >>>>>>> 0bc2a0f (前端项目构建完成)
 >>>>>>> d477b10ac00efcf1566863c73a87983e37bae68b
+=======
+>>>>>>> 38501fb (Initial commit)
