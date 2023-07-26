@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 =======
@@ -10,11 +11,28 @@
 #### 介绍
 API开放平台-前端
 =======
+=======
+>>>>>>> 7422dd8 (前端框架构建完成 用户信息获取 接口信息获取完成)
 # memory-api-frontend
 
 #### 介绍
 Memory API 接口开放平台
+<<<<<<< HEAD
 >>>>>>> 38501fb (Initial commit)
+=======
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 0bc2a0f (前端项目构建完成)
+# memory-api-frontend
+
+#### 介绍
+API开放平台-前端
+>>>>>>> dea687202 (前端框架构建完成 用户信息获取 接口信息获取完成)
+>>>>>>> 7422dd8 (前端框架构建完成 用户信息获取 接口信息获取完成)
 
 #### 软件架构
 软件架构说明
@@ -49,6 +67,10 @@ Memory API 接口开放平台
 5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
 6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 7422dd8 (前端框架构建完成 用户信息获取 接口信息获取完成)
 <<<<<<< HEAD
 =======
 =======
@@ -115,5 +137,9 @@ You can view full document on our [official website](https://pro.ant.design). An
 >>>>>>> 4ac1cbb (前端框架构建完成)
 >>>>>>> 0bc2a0f (前端项目构建完成)
 >>>>>>> d477b10ac00efcf1566863c73a87983e37bae68b
+<<<<<<< HEAD
 =======
 >>>>>>> 38501fb (Initial commit)
+=======
+>>>>>>> dea687202 (前端框架构建完成 用户信息获取 接口信息获取完成)
+>>>>>>> 7422dd8 (前端框架构建完成 用户信息获取 接口信息获取完成)
