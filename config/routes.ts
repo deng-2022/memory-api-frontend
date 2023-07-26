@@ -11,6 +11,7 @@
  * @doc https://umijs.org/docs/guides/routes
  * Dashboard: dashboard
 
+<<<<<<< HEAD
  form
  able
  profile
@@ -18,6 +19,15 @@
  warning
  user
  highlight
+=======
+form
+able
+profile
+check-circle
+warning
+user
+highlight
+>>>>>>> 7422dd8 (前端框架构建完成 用户信息获取 接口信息获取完成)
  */
 export default [
   {
@@ -69,12 +79,17 @@ export default [
     access: 'canAdmin',
     icon: 'user',
     path: '/user/list',
+<<<<<<< HEAD
     component: './TableList/Admin/User',
+=======
+    component: './TableList/User',
+>>>>>>> 7422dd8 (前端框架构建完成 用户信息获取 接口信息获取完成)
   },
 
   //接口信息页
   {
     name: '接口信息',
+<<<<<<< HEAD
     access: 'canAdmin',
     icon: 'user',
     path: '/interfaceInfo/list',
@@ -111,6 +126,10 @@ export default [
     name: '接口调用',
     icon: 'user',
     path: '/interfaceInfo/:id',
+=======
+    icon: 'user',
+    path: '/interfaceInfo/list',
+>>>>>>> 7422dd8 (前端框架构建完成 用户信息获取 接口信息获取完成)
     component: './TableList/InterfaceInfo',
   },
 

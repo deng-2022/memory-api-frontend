@@ -16,8 +16,13 @@ export type GlobalHeaderRightProps = {
 
 export const AvatarName = () => {
   const { initialState } = useModel('@@initialState');
+<<<<<<< HEAD
   const { loginUser } = initialState || {};
   return <span className="anticon">{loginUser?.userName}</span>;
+=======
+  const { currentUser } = initialState || {};
+  return <span className="anticon">{currentUser?.name}</span>;
+>>>>>>> 7422dd8 (前端框架构建完成 用户信息获取 接口信息获取完成)
 };
 
 export const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu, children }) => {
@@ -88,9 +93,15 @@ export const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu, childre
     return loading;
   }
 
+<<<<<<< HEAD
   const { loginUser } = initialState;
 
   if (!loginUser || !loginUser.userAvatar) {
+=======
+  const { currentUser } = initialState;
+
+  if (!currentUser || !currentUser.name) {
+>>>>>>> 7422dd8 (前端框架构建完成 用户信息获取 接口信息获取完成)
     return loading;
   }
 

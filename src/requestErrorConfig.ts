@@ -25,8 +25,12 @@ interface ResponseStructure {
  * @doc https://umijs.org/docs/max/request#配置
  */
 export const errorConfig: RequestConfig = {
+<<<<<<< HEAD
   baseURL:
     process.env.NODE_ENV === 'production' ? 'http://120.55.62.195:8102' : 'http://localhost:8102',
+=======
+  baseURL: 'http://localhost:8101',
+>>>>>>> 7422dd8 (前端框架构建完成 用户信息获取 接口信息获取完成)
   withCredentials: true,
   // 错误处理： umi@3 的错误处理方案。
   errorConfig: {
@@ -91,8 +95,11 @@ export const errorConfig: RequestConfig = {
   // 请求拦截器
   requestInterceptors: [
     (config: RequestOptions) => {
+<<<<<<< HEAD
       console.log(process.env.NODE_ENV);
 
+=======
+>>>>>>> 7422dd8 (前端框架构建完成 用户信息获取 接口信息获取完成)
       // 拦截请求配置，进行个性化处理。
       const url = config?.url?.concat('?token = 123');
       return { ...config, url };
@@ -101,7 +108,11 @@ export const errorConfig: RequestConfig = {
 
   // 响应拦截器
   responseInterceptors: [
+<<<<<<< HEAD
     (response: any) => {
+=======
+    (response) => {
+>>>>>>> 7422dd8 (前端框架构建完成 用户信息获取 接口信息获取完成)
       // 拦截响应数据，进行个性化处理
       const { data } = response as unknown as ResponseStructure;
 

@@ -47,6 +47,7 @@ export async function getInterfaceInfoByIdUsingGET(
   });
 }
 
+<<<<<<< HEAD
 /** invokeInterfaceInfo POST /api/interfaceInfo/invoke */
 export async function invokeInterfaceInfoUsingPOST(
   body: API.InterFaceInfoInvokeRequest,
@@ -62,6 +63,8 @@ export async function invokeInterfaceInfoUsingPOST(
   });
 }
 
+=======
+>>>>>>> 7422dd8 (前端框架构建完成 用户信息获取 接口信息获取完成)
 /** listInterfaceInfoByPage POST /api/interfaceInfo/list/page */
 export async function listInterfaceInfoByPageUsingPOST(
   body: API.InterfaceInfoQueryRequest,
@@ -77,6 +80,7 @@ export async function listInterfaceInfoByPageUsingPOST(
   });
 }
 
+<<<<<<< HEAD
 /** offlineInterfaceInfo POST /api/interfaceInfo/offline */
 export async function offlineInterfaceInfoUsingPOST(
   body: API.IdRequest,
@@ -107,6 +111,8 @@ export async function onlineInterfaceInfoUsingPOST(
   });
 }
 
+=======
+>>>>>>> 7422dd8 (前端框架构建完成 用户信息获取 接口信息获取完成)
 /** updateInterfaceInfo POST /api/interfaceInfo/update */
 export async function updateInterfaceInfoUsingPOST(
   body: API.InterfaceInfoUpdateRequest,

@@ -17,12 +17,15 @@ declare namespace API {
     message?: string;
   };
 
+<<<<<<< HEAD
   type BaseResponseListInterfaceInfoVO_ = {
     code?: number;
     data?: InterfaceInfoVO[];
     message?: string;
   };
 
+=======
+>>>>>>> 7422dd8 (前端框架构建完成 用户信息获取 接口信息获取完成)
   type BaseResponseLoginUserVO_ = {
     code?: number;
     data?: LoginUserVO;
@@ -35,12 +38,15 @@ declare namespace API {
     message?: string;
   };
 
+<<<<<<< HEAD
   type BaseResponseObject_ = {
     code?: number;
     data?: Record<string, any>;
     message?: string;
   };
 
+=======
+>>>>>>> 7422dd8 (前端框架构建完成 用户信息获取 接口信息获取完成)
   type BaseResponsePageInterfaceInfo_ = {
     code?: number;
     data?: PageInterfaceInfo_;
@@ -124,10 +130,13 @@ declare namespace API {
     id?: number;
   };
 
+<<<<<<< HEAD
   type IdRequest = {
     id?: number;
   };
 
+=======
+>>>>>>> 7422dd8 (前端框架构建完成 用户信息获取 接口信息获取完成)
   type InterfaceInfo = {
     createTime?: string;
     description?: string;
@@ -136,7 +145,10 @@ declare namespace API {
     method?: string;
     name?: string;
     requestHeader?: string;
+<<<<<<< HEAD
     requestParams?: string;
+=======
+>>>>>>> 7422dd8 (前端框架构建完成 用户信息获取 接口信息获取完成)
     responseHeader?: string;
     status?: number;
     updateTime?: string;
@@ -154,6 +166,7 @@ declare namespace API {
     userId?: number;
   };
 
+<<<<<<< HEAD
   type InterFaceInfoInvokeRequest = {
     current?: number;
     id?: number;
@@ -163,6 +176,8 @@ declare namespace API {
     userRequestParams?: string;
   };
 
+=======
+>>>>>>> 7422dd8 (前端框架构建完成 用户信息获取 接口信息获取完成)
   type InterfaceInfoQueryRequest = {
     current?: number;
     description?: string;
@@ -190,6 +205,7 @@ declare namespace API {
     url?: string;
   };
 
+<<<<<<< HEAD
   type InterfaceInfoVO = {
     createTime?: string;
     description?: string;
@@ -207,6 +223,8 @@ declare namespace API {
     userId?: number;
   };
 
+=======
+>>>>>>> 7422dd8 (前端框架构建完成 用户信息获取 接口信息获取完成)
   type LoginUserVO = {
     createTime?: string;
     id?: number;
@@ -347,12 +365,18 @@ declare namespace API {
   };
 
   type User = {
+<<<<<<< HEAD
     accessKey?: string;
+=======
+>>>>>>> 7422dd8 (前端框架构建完成 用户信息获取 接口信息获取完成)
     createTime?: string;
     id?: number;
     isDelete?: number;
     mpOpenId?: string;
+<<<<<<< HEAD
     secretKey?: string;
+=======
+>>>>>>> 7422dd8 (前端框架构建完成 用户信息获取 接口信息获取完成)
     unionId?: string;
     updateTime?: string;
     userAccount?: string;
@@ -414,10 +438,15 @@ declare namespace API {
   };
 
   type UserVO = {
+<<<<<<< HEAD
     accessKey?: string;
     createTime?: string;
     id?: number;
     secretKey?: string;
+=======
+    createTime?: string;
+    id?: number;
+>>>>>>> 7422dd8 (前端框架构建完成 用户信息获取 接口信息获取完成)
     userAvatar?: string;
     userName?: string;
     userProfile?: string;

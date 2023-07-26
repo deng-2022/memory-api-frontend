@@ -136,7 +136,11 @@ export default defineConfig({
   openAPI: [
     {
       requestLibPath: "import { request } from '@umijs/max'",
+<<<<<<< HEAD
       schemaPath: 'http://localhost:8102/api/v2/api-docs',
+=======
+      schemaPath: 'http://localhost:8101/api//v2/api-docs',
+>>>>>>> 7422dd8 (前端框架构建完成 用户信息获取 接口信息获取完成)
       projectName: 'memory-api',
     },
   ],
