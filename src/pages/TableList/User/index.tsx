@@ -1,9 +1,7 @@
 import { addRule, removeRule, updateRule } from '@/services/ant-design-pro/api';
-import { listUserByPageUsingPOST } from '@/services/memory-api/userController';
-import { PlusOutlined } from '@ant-design/icons';
+import { addUserUsingPOST, listUserByPageUsingPOST } from '@/services/memory-api/userController';
 import type { ActionType, ProColumns, ProDescriptionsItemProps } from '@ant-design/pro-components';
 import {
-  FooterToolbar,
   ModalForm,
   PageContainer,
   ProDescriptions,
@@ -11,11 +9,9 @@ import {
   ProFormTextArea,
   ProTable,
 } from '@ant-design/pro-components';
-import { FormattedMessage, useIntl } from '@umijs/max';
-import { Button, Drawer, message } from 'antd';
+import { Button, Drawer, message, Space, Tag } from 'antd';
 import React, { useRef, useState } from 'react';
-import type { FormValueType } from './../components/UpdateForm';
-import UpdateForm from './../components/UpdateForm';
+import type { FormValueType } from '../InterfaceInfo/UpdateForm';
 
 /**
  * @en-US Add node
@@ -84,7 +80,7 @@ const handleRemove = async (selectedRows: API.RuleListItem[]) => {
   }
 };
 
-const TableList: React.FC = () => {
+const UserList: React.FC = () => {
   /**
    * @en-US Pop-up window of new window
    * @zh-CN 新建窗口的弹窗
@@ -100,19 +96,19 @@ const TableList: React.FC = () => {
 
   const actionRef = useRef<ActionType>();
   const [currentRow, setCurrentRow] = useState<API.RuleListItem>();
-  const [selectedRowsState, setSelectedRows] = useState<API.RuleListItem[]>([]);
 
   /**
    * @en-US International configuration
    * @zh-CN 国际化配置
    * */
-  const intl = useIntl();
 
   const columns: ProColumns<API.User>[] = [
     {
       title: 'id',
       dataIndex: 'id',
-      tip: 'The rule name is the unique key',
+      copyable: true,
+      ellipsis: true,
+      tip: '用户id是唯一的',
     },
 
     {
@@ -128,88 +124,126 @@ const TableList: React.FC = () => {
     },
 
     {
+      title: '头像',
+      dataIndex: 'userAvater',
+      valueType: 'textarea',
+      render: (_, record) => {
+        const url = record.userAvatar;
+
+        return (
+          <Space>
+            <img src={url} alt="img" style={{ width: '30px', height: '30px' }} />
+          </Space>
+        );
+      },
+    },
+
+    {
       title: '微信开放平台id',
       dataIndex: 'unionId',
-      sorter: true,
+      copyable: true,
+      ellipsis: true,
     },
 
     {
       title: '公众号id',
       dataIndex: 'mpOpenId',
-      sorter: true,
+      copyable: true,
+      ellipsis: true,
     },
 
     {
       title: '角色',
+      disable: true,
       dataIndex: 'userRole',
-      valueEnum: {
-        admin: {
-          text: '管理员',
-          status: 'Processing',
-        },
-        user: {
-          text: '普通用户',
-          status: 'Default',
-        },
+      valueType: 'select',
+      filters: true,
+      onFilter: true,
+
+      render: (_, record) => {
+        let tagColor = 'grey';
+        let userRole = '';
+
+        switch (record?.userRole) {
+          case 'admin':
+            tagColor = 'green';
+            userRole = '管理员';
+            break;
+          case 'user':
+            tagColor = 'blue';
+            userRole = '普通用户';
+            break;
+          default:
+            tagColor = 'default';
+        }
+
+        return (
+          <Space>
+            <Tag color={tagColor} key={record?.userRole}>
+              {userRole}
+            </Tag>
+          </Space>
+        );
       },
     },
 
     {
       title: '介绍',
       dataIndex: 'userProfile',
-      hideInForm: true,
+      ellipsis: true,
     },
 
     {
       title: '注册时间',
       dataIndex: 'createTime',
-      sorter: true,
-      hideInForm: true,
+      ellipsis: true,
     },
 
     {
       title: '状态',
       dataIndex: 'isDelete',
-      hideInForm: true,
       valueEnum: {
-        admin: {
-          text: (
-            <FormattedMessage
-              id="pages.searchTable.nameStatus.default"
-              defaultMessage="Shut down"
-            />
-          ),
-          status: 'Default',
+        0: {
+          text: '正常',
+          status: 'success',
         },
         user: {
-          text: (
-            <FormattedMessage id="pages.searchTable.nameStatus.running" defaultMessage="Running" />
-          ),
-          status: 'Processing',
+          text: '异常',
+          status: 'error',
         },
       },
+    },
+
+    {
+      title: '操作',
+      valueType: 'option',
+      key: 'option',
+      render: () => [
+        <a
+          key="update"
+          onClick={() => {
+            handleUpdateModalOpen(true);
+          }}
+        >
+          更新
+        </a>,
+
+        <a
+          key="delete"
+          onClick={() => {
+            // action?.startEditable?.(record.id);
+          }}
+        >
+          删除
+        </a>,
+      ],
     },
   ];
 
   return (
     <PageContainer>
       <ProTable<API.User, API.PageParams>
-        actionRef={actionRef}
-        rowKey="key"
-        search={{
-          labelWidth: 120,
-        }}
-        toolBarRender={() => [
-          <Button
-            type="primary"
-            key="primary"
-            onClick={() => {
-              handleModalOpen(true);
-            }}
-          >
-            <PlusOutlined /> <FormattedMessage id="pages.searchTable.new" defaultMessage="New" />
-          </Button>,
-        ]}
+        // 发送请求
         request={async (params: { pageSize?: number; current?: number; keyword?: string }) => {
           const res = await listUserByPageUsingPOST({
             ...params,
@@ -224,63 +258,60 @@ const TableList: React.FC = () => {
           }
         }}
         columns={columns}
-        rowSelection={{
-          onChange: (_, selectedRows) => {
-            setSelectedRows(selectedRows);
+        //
+        editable={{
+          type: 'multiple',
+        }}
+        //
+        columnsState={{
+          persistenceKey: 'pro-table-singe-demos',
+          persistenceType: 'localStorage',
+          onChange(value) {
+            console.log('value: ', value);
           },
         }}
+        //
+        rowKey="id"
+        search={{
+          labelWidth: 'auto',
+        }}
+        //
+        options={{
+          setting: {
+            listsHeight: 400,
+          },
+        }}
+        //
+        pagination={{
+          pageSize: 5,
+          onChange: (page) => console.log(page),
+        }}
+        //
+        dateFormatter="string"
+        headerTitle="用户信息"
+        toolBarRender={() => [
+          // <Button key="show">查看日志</Button>,
+
+          <Button
+            key="button"
+            onClick={() => {
+              handleModalOpen(true);
+            }}
+            type="primary"
+          >
+            新增用户
+          </Button>,
+        ]}
       />
 
-      {selectedRowsState?.length > 0 && (
-        <FooterToolbar
-          extra={
-            <div>
-              <FormattedMessage id="pages.searchTable.chosen" defaultMessage="Chosen" />{' '}
-              <a style={{ fontWeight: 600 }}>{selectedRowsState.length}</a>{' '}
-              <FormattedMessage id="pages.searchTable.createForm.newRule" defaultMessage="项" />
-              &nbsp;&nbsp;
-              <span>
-                <FormattedMessage
-                  id="pages.searchTable.totalServiceCalls"
-                  defaultMessage="Total number of service calls"
-                />{' '}
-                {selectedRowsState.reduce((pre, item) => pre + item.callNo!, 0)}{' '}
-                <FormattedMessage id="pages.searchTable.tenThousand" defaultMessage="万" />
-              </span>
-            </div>
-          }
-        >
-          <Button
-            onClick={async () => {
-              await handleRemove(selectedRowsState);
-              setSelectedRows([]);
-              actionRef.current?.reloadAndRest?.();
-            }}
-          >
-            <FormattedMessage
-              id="pages.searchTable.batchDeletion"
-              defaultMessage="Batch deletion"
-            />
-          </Button>
-          <Button type="primary">
-            <FormattedMessage
-              id="pages.searchTable.batchApproval"
-              defaultMessage="Batch approval"
-            />
-          </Button>
-        </FooterToolbar>
-      )}
-
+      {/* 新增记录表单 */}
       <ModalForm
-        title={intl.formatMessage({
-          id: 'pages.searchTable.createForm.newRule',
-          defaultMessage: 'New rule',
-        })}
+        title="新增用户"
         width="400px"
         open={createModalOpen}
         onOpenChange={handleModalOpen}
         onFinish={async (value) => {
-          const success = await handleAdd(value as API.RuleListItem);
+          const success = await addUserUsingPOST(value as API.User);
           if (success) {
             handleModalOpen(false);
             if (actionRef.current) {
@@ -290,44 +321,20 @@ const TableList: React.FC = () => {
         }}
       >
         <ProFormText
+          name="userName"
+          label="账户"
+          placeholder="请输入账户名"
+          initialValue="账户"
+          required
           rules={[
-            {
-              required: true,
-              message: (
-                <FormattedMessage
-                  id="pages.searchTable.ruleName"
-                  defaultMessage="Rule name is required"
-                />
-              ),
-            },
+            { required: true, message: '账户不能为空' },
+            { min: 4, max: 20, message: '账户名输入不正确' },
           ]}
-          width="md"
-          name="name"
         />
         <ProFormTextArea width="md" name="desc" />
       </ModalForm>
 
-      <UpdateForm
-        onSubmit={async (value) => {
-          const success = await handleUpdate(value);
-          if (success) {
-            handleUpdateModalOpen(false);
-            setCurrentRow(undefined);
-            if (actionRef.current) {
-              actionRef.current.reload();
-            }
-          }
-        }}
-        onCancel={() => {
-          handleUpdateModalOpen(false);
-          if (!showDetail) {
-            setCurrentRow(undefined);
-          }
-        }}
-        updateModalOpen={updateModalOpen}
-        values={currentRow || {}}
-      />
-
+      {/* 遮罩层 */}
       <Drawer
         width={600}
         open={showDetail}
@@ -355,4 +362,4 @@ const TableList: React.FC = () => {
   );
 };
 
-export default TableList;
+export default UserList;

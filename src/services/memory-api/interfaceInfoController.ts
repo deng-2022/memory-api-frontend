@@ -18,16 +18,13 @@ export async function addInterfaceInfoUsingPOST(
 }
 
 /** deleteInterfaceInfo POST /api/interfaceInfo/delete */
-export async function deleteInterfaceInfoUsingPOST(
-  body: API.DeleteRequest,
-  options?: { [key: string]: any },
-) {
+export async function deleteInterfaceInfoUsingPOST(id: number, options?: { [key: string]: any }) {
   return request<API.BaseResponseBoolean_>('/api/interfaceInfo/delete', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
-    data: body,
+    data: { id },
     ...(options || {}),
   });
 }
@@ -35,13 +32,13 @@ export async function deleteInterfaceInfoUsingPOST(
 /** getInterfaceInfoById GET /api/interfaceInfo/get */
 export async function getInterfaceInfoByIdUsingGET(
   // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
-  params: API.getInterfaceInfoByIdUsingGETParams,
+  id: number,
   options?: { [key: string]: any },
 ) {
   return request<API.BaseResponseInterfaceInfo_>('/api/interfaceInfo/get', {
     method: 'GET',
     params: {
-      ...params,
+      id,
     },
     ...(options || {}),
   });
