@@ -11,13 +11,13 @@
  * @doc https://umijs.org/docs/guides/routes
  * Dashboard: dashboard
 
-form
-able
-profile
-check-circle
-warning
-user
-highlight
+ form
+ able
+ profile
+ check-circle
+ warning
+ user
+ highlight
  */
 export default [
   {
@@ -69,14 +69,31 @@ export default [
     access: 'canAdmin',
     icon: 'user',
     path: '/user/list',
-    component: './TableList/User',
+    component: './TableList/Admin/User',
   },
 
   //接口信息页
   {
     name: '接口信息',
+    access: 'canAdmin',
     icon: 'user',
     path: '/interfaceInfo/list',
+    component: './TableList/Admin/InterfaceInfo',
+  },
+
+  //接口详情页
+  {
+    name: '接口详情',
+    icon: 'user',
+    path: '/interfaceInfo/info',
+    component: './TableList/Index',
+  },
+
+  //接口调用页
+  {
+    name: '接口调用',
+    icon: 'user',
+    path: '/interfaceInfo/:id',
     component: './TableList/InterfaceInfo',
   },
 
