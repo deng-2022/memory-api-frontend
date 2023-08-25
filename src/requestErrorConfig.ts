@@ -26,7 +26,7 @@ interface ResponseStructure {
  */
 export const errorConfig: RequestConfig = {
   baseURL:
-    process.env.NODE_ENV === 'production' ? 'http://120.55.62.195:8101' : 'http://localhost:8101',
+    process.env.NODE_ENV === 'production' ? 'http://120.55.62.195:8102' : 'http://localhost:8102',
   withCredentials: true,
   // 错误处理： umi@3 的错误处理方案。
   errorConfig: {

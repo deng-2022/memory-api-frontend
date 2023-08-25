@@ -81,6 +81,23 @@ export default [
     component: './TableList/Admin/InterfaceInfo',
   },
 
+  // 接口分析页
+  {
+    name: '接口分析',
+    icon: 'user',
+    path: '/admin/interface_analysis',
+    component: './TableList/Admin/InterfaceAnalysis'
+  },
+
+  // 测试分析页
+  {
+    name: '测试分析',
+    icon: 'user',
+    path: '/admin/test_analysis',
+    component: './TableList/Admin/testAnalysis'
+  },
+
+
   //接口详情页
   {
     name: '接口详情',
