@@ -142,6 +142,10 @@ export default defineConfig({
       schemaPath: 'http://localhost:8101/api//v2/api-docs',
 >>>>>>> 7422dd8 (前端框架构建完成 用户信息获取 接口信息获取完成)
       projectName: 'memory-api',
+=======
+      schemaPath: 'http://localhost:8084/api/v2/api-docs?group=壁纸分享',
+      projectName: 'pic-memories',
+>>>>>>> d0d0c54 (基本功能完成 壁纸浏览 查看在线用户信息)
     },
   ],
   mfsu: {

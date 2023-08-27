@@ -76,7 +76,6 @@ export default [
   //用户信息页
   {
     name: '用户信息',
-    access: 'canAdmin',
     icon: 'user',
     path: '/user/list',
 <<<<<<< HEAD
@@ -86,8 +85,9 @@ export default [
 >>>>>>> 7422dd8 (前端框架构建完成 用户信息获取 接口信息获取完成)
   },
 
-  //接口信息页
+  //壁纸信息页
   {
+<<<<<<< HEAD
     name: '接口信息',
 <<<<<<< HEAD
     access: 'canAdmin',
@@ -131,7 +131,14 @@ export default [
     path: '/interfaceInfo/list',
 >>>>>>> 7422dd8 (前端框架构建完成 用户信息获取 接口信息获取完成)
     component: './TableList/InterfaceInfo',
+=======
+    name: '壁纸信息',
+    icon: 'user',
+    path: '/wallpaper/list',
+    component: './TableList/Wallpaper',
+>>>>>>> d0d0c54 (基本功能完成 壁纸浏览 查看在线用户信息)
   },
+  //上传页
 
   {
     path: '/',

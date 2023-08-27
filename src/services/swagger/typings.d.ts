@@ -97,16 +97,4 @@ declare namespace API {
     /** ID of pet to update */
     petId: number;
   };
-
-  type User = {
-    id?: number;
-    username?: string;
-    firstName?: string;
-    lastName?: string;
-    email?: string;
-    password?: string;
-    phone?: string;
-    /** User Status */
-    userStatus?: number;
-  };
 }

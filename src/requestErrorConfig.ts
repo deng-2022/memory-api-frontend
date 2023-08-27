@@ -27,10 +27,16 @@ interface ResponseStructure {
 export const errorConfig: RequestConfig = {
 <<<<<<< HEAD
   baseURL:
+<<<<<<< HEAD
     process.env.NODE_ENV === 'production' ? 'http://120.55.62.195:8102' : 'http://localhost:8102',
 =======
+<<<<<<< HEAD
   baseURL: 'http://localhost:8101',
 >>>>>>> 7422dd8 (前端框架构建完成 用户信息获取 接口信息获取完成)
+=======
+    process.env.NODE_ENV === 'production' ? 'http://120.55.62.195:8084' : 'http://localhost:8084',
+>>>>>>> d0d0c54 (基本功能完成 壁纸浏览 查看在线用户信息)
+>>>>>>> 0c1e93a (基本功能完成 壁纸浏览 查看在线用户信息)
   withCredentials: true,
   // 错误处理： umi@3 的错误处理方案。
   errorConfig: {

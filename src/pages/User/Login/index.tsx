@@ -1,6 +1,6 @@
 import Footer from '@/components/Footer';
 import { getFakeCaptcha } from '@/services/ant-design-pro/login';
-import { userLoginUsingPOST } from '@/services/memory-api/userController';
+import { adminLoginUsingPOST } from '@/services/pic-memories/userController';
 import {
   AlipayCircleOutlined,
   LockOutlined,
@@ -103,14 +103,14 @@ const Login: React.FC = () => {
   const handleSubmit = async (values: API.UserLoginRequest) => {
     try {
       // 登录
-      const res = await userLoginUsingPOST({ ...values });
+      const res = await adminLoginUsingPOST({ ...values });
       // 登录成功
       if (res.data) {
         setInitialState({
           loginUser: res.data,
         });
         // 发送登录成功信息
-        message.success(`欢迎您，${res.data.userName}`);
+        message.success(`欢迎您，${res.data.username}`);
 
         // 重定向
         const urlParams = new URL(window.location.href).searchParams;
@@ -207,7 +207,7 @@ const Login: React.FC = () => {
           {type === 'account' && (
             <>
               <ProFormText
-                name="userAccount"
+                name="username"
                 fieldProps={{
                   size: 'large',
                   prefix: <UserOutlined />,
@@ -229,7 +229,7 @@ const Login: React.FC = () => {
                 ]}
               />
               <ProFormText.Password
-                name="userPassword"
+                name="password"
                 fieldProps={{
                   size: 'large',
                   prefix: <LockOutlined />,
