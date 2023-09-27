@@ -33,6 +33,8 @@ highlight
 >>>>>>> dea6872 (前端框架构建完成 用户信息获取 接口信息获取完成)
 >>>>>>> 06b7559 (前端框架构建完成 用户信息获取 接口信息获取完成)
  */
+import admin from "@/pages/Admin";
+
 export default [
   {
     path: '/user',
@@ -52,6 +54,7 @@ export default [
       },
     ],
   },
+
   //欢迎页
   {
     path: '/welcome',
@@ -59,6 +62,7 @@ export default [
     icon: 'smile',
     component: './Welcome',
   },
+<<<<<<< HEAD
   //管理页
   {
     path: '/admin',
@@ -108,6 +112,9 @@ export default [
     path: '/admin/interface_analysis',
     component: './TableList/Admin/InterfaceAnalysis'
   },
+=======
+
+>>>>>>> ed0e992 (提供管理员页面：用户信息 接口信息 接口分析 接口广场页面优化)
 
   // 测试分析页
   {
@@ -117,10 +124,9 @@ export default [
     component: './TableList/Admin/testAnalysis'
   },
 
-
   //接口详情页
   {
-    name: '接口详情',
+    name: '接口广场',
     icon: 'user',
     path: '/interfaceInfo/info',
     component: './TableList/Index',
@@ -129,6 +135,7 @@ export default [
   //接口调用页
   {
     name: '接口调用',
+    layout: false,
     icon: 'user',
     path: '/interfaceInfo/:id',
 =======
@@ -160,10 +167,46 @@ export default [
   },
 >>>>>>> dea6872 (前端框架构建完成 用户信息获取 接口信息获取完成)
 
+
   {
     path: '/',
     redirect: '/welcome',
   },
+
+  // 管理员
+  {
+    path: '/',
+    access: 'canAdmin',
+    name: 'admin',
+    icon: 'smile',
+    routes: [
+      //用户信息页
+      {
+        name: '用户信息',
+        access: 'canAdmin',
+        icon: 'user',
+        path: '/user/list',
+        component: './TableList/Admin/User',
+      },
+      //接口信息页
+      {
+        name: '接口信息',
+        access: 'canAdmin',
+        icon: 'user',
+        path: '/interfaceInfo/list',
+        component: './TableList/Admin/InterfaceInfo',
+      },
+      // 接口分析页
+      {
+        name: '接口分析',
+        icon: 'user',
+        path: '/admin/interface_analysis',
+        component: './TableList/Admin/InterfaceAnalysis'
+      },
+
+    ],
+  },
+
 
   {
     path: '*',
