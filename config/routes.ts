@@ -11,7 +11,6 @@
  * @doc https://umijs.org/docs/guides/routes
  * Dashboard: dashboard
 
-<<<<<<< HEAD
  form
  able
  profile
@@ -19,7 +18,6 @@
  warning
  user
  highlight
-=======
 form
 able
 profile
@@ -27,14 +25,7 @@ check-circle
 warning
 user
 highlight
-<<<<<<< HEAD
->>>>>>> 7422dd8 (前端框架构建完成 用户信息获取 接口信息获取完成)
-=======
->>>>>>> dea6872 (前端框架构建完成 用户信息获取 接口信息获取完成)
->>>>>>> 06b7559 (前端框架构建完成 用户信息获取 接口信息获取完成)
  */
-import admin from "@/pages/Admin";
-
 export default [
   {
     path: '/user',
@@ -62,111 +53,6 @@ export default [
     icon: 'smile',
     component: './Welcome',
   },
-<<<<<<< HEAD
-  //管理页
-  {
-    path: '/admin',
-    name: 'admin',
-    icon: 'crown',
-    access: 'canAdmin',
-    routes: [
-      {
-        path: '/admin',
-        redirect: '/admin/sub-page',
-      },
-      {
-        path: '/admin/sub-page',
-        name: 'sub-page',
-        component: './Admin',
-      },
-    ],
-  },
-  //用户信息页
-  {
-    name: '用户信息',
-<<<<<<< HEAD
-    icon: 'user',
-    path: '/user/list',
-<<<<<<< HEAD
-    component: './TableList/Admin/User',
-=======
-    component: './TableList/User',
->>>>>>> 7422dd8 (前端框架构建完成 用户信息获取 接口信息获取完成)
-  },
-
-  //壁纸信息页
-  {
-<<<<<<< HEAD
-    name: '接口信息',
-<<<<<<< HEAD
-    access: 'canAdmin',
-    icon: 'user',
-    path: '/interfaceInfo/list',
-    component: './TableList/Admin/InterfaceInfo',
-  },
-
-  // 接口分析页
-  {
-    name: '接口分析',
-    icon: 'user',
-    path: '/admin/interface_analysis',
-    component: './TableList/Admin/InterfaceAnalysis'
-  },
-=======
-
->>>>>>> ed0e992 (提供管理员页面：用户信息 接口信息 接口分析 接口广场页面优化)
-
-  // 测试分析页
-  {
-    name: '测试分析',
-    icon: 'user',
-    path: '/admin/test_analysis',
-    component: './TableList/Admin/testAnalysis'
-  },
-
-  //接口详情页
-  {
-    name: '接口广场',
-    icon: 'user',
-    path: '/interfaceInfo/info',
-    component: './TableList/Index',
-  },
-
-  //接口调用页
-  {
-    name: '接口调用',
-    layout: false,
-    icon: 'user',
-    path: '/interfaceInfo/:id',
-=======
-    icon: 'user',
-    path: '/interfaceInfo/list',
->>>>>>> 7422dd8 (前端框架构建完成 用户信息获取 接口信息获取完成)
-    component: './TableList/InterfaceInfo',
-=======
-    name: '壁纸信息',
-    icon: 'user',
-    path: '/wallpaper/list',
-    component: './TableList/Wallpaper',
->>>>>>> d0d0c54 (基本功能完成 壁纸浏览 查看在线用户信息)
-  },
-  //上传页
-=======
-    access: 'canAdmin',
-    icon: 'user',
-    path: '/user/list',
-    component: './TableList/User',
-  },
-
-  //接口信息页
-  {
-    name: '接口信息',
-    icon: 'user',
-    path: '/interfaceInfo/list',
-    component: './TableList/InterfaceInfo',
-  },
->>>>>>> dea6872 (前端框架构建完成 用户信息获取 接口信息获取完成)
-
 
   {
     path: '/',
@@ -207,6 +93,22 @@ export default [
     ],
   },
 
+  //接口广场页
+  {
+    name: '接口广场',
+    icon: 'user',
+    path: '/interfaceInfo/info',
+    component: './TableList/Index',
+  },
+
+  // 接口调用页
+  {
+    name: '接口调用',
+    layout: false,
+    icon: 'user',
+    path: '/interfaceInfo/:id',
+    component: './TableList/InterfaceInfo',
+  },
 
   {
     path: '*',

@@ -67,6 +67,14 @@ export async function getUserVOByIdUsingGET(
   });
 }
 
+/** getUser GET /api/user/list */
+export async function getUserUsingGET(options?: { [key: string]: any }) {
+  return request<API.BaseResponseListUser_>('/api/user/list', {
+    method: 'GET',
+    ...(options || {}),
+  });
+}
+
 /** listUserByPage POST /api/user/list/page */
 export async function listUserByPageUsingPOST(
   body: API.UserQueryRequest,
@@ -93,6 +101,14 @@ export async function listUserVOByPageUsingPOST(
       'Content-Type': 'application/json',
     },
     data: body,
+    ...(options || {}),
+  });
+}
+
+/** getUser2 GET /api/user/list2 */
+export async function getUser2UsingGET(options?: { [key: string]: any }) {
+  return request<API.BaseResponseListUser_>('/api/user/list2', {
+    method: 'GET',
     ...(options || {}),
   });
 }

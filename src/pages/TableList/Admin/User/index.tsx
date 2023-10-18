@@ -1,4 +1,4 @@
-import { getPageUsingGET } from '@/services/pic-memories/userController';
+import { listUserByPageUsingPOST } from '@/services/memory-api/userController';
 import type { ProColumns } from '@ant-design/pro-components';
 import { PageContainer, ProTable } from '@ant-design/pro-components';
 import { Space, Tag } from 'antd';
@@ -126,7 +126,7 @@ const UserList: React.FC = () => {
       <ProTable<API.User, API.PageParams>
         // 发送请求
         request={async (params: { pageSize?: number; current?: number; keyword?: string }) => {
-          const res = await getPageUsingGET({
+          const res = await listUserByPageUsingPOST({
             ...params,
           });
 

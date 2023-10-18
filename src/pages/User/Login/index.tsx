@@ -1,10 +1,6 @@
 import Footer from '@/components/Footer';
 import { getFakeCaptcha } from '@/services/ant-design-pro/login';
-<<<<<<< HEAD
-import { adminLoginUsingPOST } from '@/services/pic-memories/userController';
-=======
 import { userLoginUsingPOST } from '@/services/memory-api/userController';
->>>>>>> dea6872 (前端框架构建完成 用户信息获取 接口信息获取完成)
 import {
   AlipayCircleOutlined,
   LockOutlined,
@@ -107,23 +103,14 @@ const Login: React.FC = () => {
   const handleSubmit = async (values: API.UserLoginRequest) => {
     try {
       // 登录
-<<<<<<< HEAD
-      const res = await adminLoginUsingPOST({ ...values });
-=======
       const res = await userLoginUsingPOST({ ...values });
->>>>>>> dea6872 (前端框架构建完成 用户信息获取 接口信息获取完成)
       // 登录成功
       if (res.data) {
         setInitialState({
           loginUser: res.data,
         });
         // 发送登录成功信息
-<<<<<<< HEAD
-        message.success(`欢迎您，${res.data.username}`);
-=======
         message.success(`欢迎您，${res.data.userName}`);
->>>>>>> dea6872 (前端框架构建完成 用户信息获取 接口信息获取完成)
-
         // 重定向
         const urlParams = new URL(window.location.href).searchParams;
         history.push(urlParams.get('redirect') || '/');
@@ -219,11 +206,7 @@ const Login: React.FC = () => {
           {type === 'account' && (
             <>
               <ProFormText
-<<<<<<< HEAD
-                name="username"
-=======
                 name="userAccount"
->>>>>>> dea6872 (前端框架构建完成 用户信息获取 接口信息获取完成)
                 fieldProps={{
                   size: 'large',
                   prefix: <UserOutlined />,
@@ -245,11 +228,7 @@ const Login: React.FC = () => {
                 ]}
               />
               <ProFormText.Password
-<<<<<<< HEAD
-                name="password"
-=======
                 name="userPassword"
->>>>>>> dea6872 (前端框架构建完成 用户信息获取 接口信息获取完成)
                 fieldProps={{
                   size: 'large',
                   prefix: <LockOutlined />,

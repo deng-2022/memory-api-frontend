@@ -1,6 +1,6 @@
-﻿import type { RequestOptions } from '@@/plugin-request/request';
-import type { RequestConfig } from '@umijs/max';
-import { message, notification } from 'antd';
+﻿import type {RequestOptions} from '@@/plugin-request/request';
+import type {RequestConfig} from '@umijs/max';
+import {message, notification} from 'antd';
 
 // 错误处理方案： 错误类型
 enum ErrorShowType {
@@ -10,6 +10,7 @@ enum ErrorShowType {
   NOTIFICATION = 3,
   REDIRECT = 9,
 }
+
 // 与后端约定的响应数据格式
 interface ResponseStructure {
   success: boolean;
@@ -25,35 +26,18 @@ interface ResponseStructure {
  * @doc https://umijs.org/docs/max/request#配置
  */
 export const errorConfig: RequestConfig = {
-<<<<<<< HEAD
-  baseURL:
-<<<<<<< HEAD
-    process.env.NODE_ENV === 'production' ? 'http://120.55.62.195:8102' : 'http://localhost:8102',
-=======
-<<<<<<< HEAD
-  baseURL: 'http://localhost:8101',
->>>>>>> 7422dd8 (前端框架构建完成 用户信息获取 接口信息获取完成)
-=======
-    process.env.NODE_ENV === 'production' ? 'http://120.55.62.195:8084' : 'http://localhost:8084',
->>>>>>> d0d0c54 (基本功能完成 壁纸浏览 查看在线用户信息)
-<<<<<<< HEAD
->>>>>>> 0c1e93a (基本功能完成 壁纸浏览 查看在线用户信息)
-=======
-=======
-  baseURL: 'http://localhost:8101',
->>>>>>> dea6872 (前端框架构建完成 用户信息获取 接口信息获取完成)
->>>>>>> 06b7559 (前端框架构建完成 用户信息获取 接口信息获取完成)
+  baseURL: process.env.NODE_ENV === 'production' ? 'http://120.55.62.195:8102' : 'http://localhost:8102',
   withCredentials: true,
   // 错误处理： umi@3 的错误处理方案。
   errorConfig: {
     // 错误抛出
     errorThrower: (res) => {
-      const { success, data, errorCode, errorMessage, showType } =
+      const {success, data, errorCode, errorMessage, showType} =
         res as unknown as ResponseStructure;
       if (!success) {
         const error: any = new Error(errorMessage);
         error.name = 'BizError';
-        error.info = { errorCode, errorMessage, showType, data };
+        error.info = {errorCode, errorMessage, showType, data};
         throw error; // 抛出自制的错误
       }
     },
@@ -64,7 +48,7 @@ export const errorConfig: RequestConfig = {
       if (error.name === 'BizError') {
         const errorInfo: ResponseStructure | undefined = error.info;
         if (errorInfo) {
-          const { errorMessage, errorCode } = errorInfo;
+          const {errorMessage, errorCode} = errorInfo;
           switch (errorInfo.showType) {
             case ErrorShowType.SILENT:
               // do nothing
@@ -107,34 +91,18 @@ export const errorConfig: RequestConfig = {
   // 请求拦截器
   requestInterceptors: [
     (config: RequestOptions) => {
-<<<<<<< HEAD
       console.log(process.env.NODE_ENV);
-
-=======
-<<<<<<< HEAD
->>>>>>> 7422dd8 (前端框架构建完成 用户信息获取 接口信息获取完成)
-=======
->>>>>>> dea6872 (前端框架构建完成 用户信息获取 接口信息获取完成)
->>>>>>> 06b7559 (前端框架构建完成 用户信息获取 接口信息获取完成)
       // 拦截请求配置，进行个性化处理。
       const url = config?.url?.concat('?token = 123');
-      return { ...config, url };
+      return {...config, url};
     },
   ],
 
   // 响应拦截器
   responseInterceptors: [
-<<<<<<< HEAD
     (response: any) => {
-=======
-    (response) => {
-<<<<<<< HEAD
->>>>>>> 7422dd8 (前端框架构建完成 用户信息获取 接口信息获取完成)
-=======
->>>>>>> dea6872 (前端框架构建完成 用户信息获取 接口信息获取完成)
->>>>>>> 06b7559 (前端框架构建完成 用户信息获取 接口信息获取完成)
       // 拦截响应数据，进行个性化处理
-      const { data } = response as unknown as ResponseStructure;
+      const {data} = response as unknown as ResponseStructure;
 
       if (data?.success === false) {
         message.error('请求失败！');

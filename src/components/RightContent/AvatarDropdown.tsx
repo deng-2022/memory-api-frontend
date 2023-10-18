@@ -13,24 +13,10 @@ export type GlobalHeaderRightProps = {
 };
 
 export const AvatarName = () => {
-<<<<<<< HEAD
   const { initialState } = useModel('@@initialState');
-<<<<<<< HEAD
   const { loginUser } = initialState || {};
-=======
-  const {initialState} = useModel('@@initialState');
-  const {loginUser} = initialState || {};
 
->>>>>>> ed0e992 (提供管理员页面：用户信息 接口信息 接口分析 接口广场页面优化)
   return <span className="anticon">{loginUser?.userName}</span>;
-=======
-  const { currentUser } = initialState || {};
-  return <span className="anticon">{currentUser?.name}</span>;
-<<<<<<< HEAD
->>>>>>> 7422dd8 (前端框架构建完成 用户信息获取 接口信息获取完成)
-=======
->>>>>>> dea6872 (前端框架构建完成 用户信息获取 接口信息获取完成)
->>>>>>> 06b7559 (前端框架构建完成 用户信息获取 接口信息获取完成)
 };
 
 export const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({menu, children}) => {
@@ -82,26 +68,9 @@ export const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({menu, children
     return unLoading;
   }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-  const { loginUser } = initialState;
-
-  if (!loginUser || !loginUser.userAvatar) {
-=======
-  const { currentUser } = initialState;
-
-  if (!currentUser || !currentUser.name) {
-<<<<<<< HEAD
->>>>>>> 7422dd8 (前端框架构建完成 用户信息获取 接口信息获取完成)
-=======
->>>>>>> dea6872 (前端框架构建完成 用户信息获取 接口信息获取完成)
->>>>>>> 06b7559 (前端框架构建完成 用户信息获取 接口信息获取完成)
-    return loading;
-=======
   const {loginUser} = initialState;
   if (!loginUser || !loginUser.userAvatar) {
     return unLoading;
->>>>>>> ed0e992 (提供管理员页面：用户信息 接口信息 接口分析 接口广场页面优化)
   }
 
   const menuItems = [

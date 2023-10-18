@@ -17,19 +17,18 @@ declare namespace API {
     message?: string;
   };
 
-<<<<<<< HEAD
   type BaseResponseListInterfaceInfoVO_ = {
     code?: number;
     data?: InterfaceInfoVO[];
     message?: string;
   };
 
-=======
-<<<<<<< HEAD
->>>>>>> 7422dd8 (前端框架构建完成 用户信息获取 接口信息获取完成)
-=======
->>>>>>> dea6872 (前端框架构建完成 用户信息获取 接口信息获取完成)
->>>>>>> 06b7559 (前端框架构建完成 用户信息获取 接口信息获取完成)
+  type BaseResponseListUser_ = {
+    code?: number;
+    data?: User[];
+    message?: string;
+  };
+
   type BaseResponseLoginUserVO_ = {
     code?: number;
     data?: LoginUserVO;
@@ -42,19 +41,12 @@ declare namespace API {
     message?: string;
   };
 
-<<<<<<< HEAD
   type BaseResponseObject_ = {
     code?: number;
     data?: Record<string, any>;
     message?: string;
   };
 
-=======
-<<<<<<< HEAD
->>>>>>> 7422dd8 (前端框架构建完成 用户信息获取 接口信息获取完成)
-=======
->>>>>>> dea6872 (前端框架构建完成 用户信息获取 接口信息获取完成)
->>>>>>> 06b7559 (前端框架构建完成 用户信息获取 接口信息获取完成)
   type BaseResponsePageInterfaceInfo_ = {
     code?: number;
     data?: PageInterfaceInfo_;
@@ -138,17 +130,10 @@ declare namespace API {
     id?: number;
   };
 
-<<<<<<< HEAD
   type IdRequest = {
     id?: number;
   };
 
-=======
-<<<<<<< HEAD
->>>>>>> 7422dd8 (前端框架构建完成 用户信息获取 接口信息获取完成)
-=======
->>>>>>> dea6872 (前端框架构建完成 用户信息获取 接口信息获取完成)
->>>>>>> 06b7559 (前端框架构建完成 用户信息获取 接口信息获取完成)
   type InterfaceInfo = {
     createTime?: string;
     description?: string;
@@ -157,14 +142,7 @@ declare namespace API {
     method?: string;
     name?: string;
     requestHeader?: string;
-<<<<<<< HEAD
     requestParams?: string;
-=======
-<<<<<<< HEAD
->>>>>>> 7422dd8 (前端框架构建完成 用户信息获取 接口信息获取完成)
-=======
->>>>>>> dea6872 (前端框架构建完成 用户信息获取 接口信息获取完成)
->>>>>>> 06b7559 (前端框架构建完成 用户信息获取 接口信息获取完成)
     responseHeader?: string;
     status?: number;
     updateTime?: string;
@@ -182,7 +160,6 @@ declare namespace API {
     userId?: number;
   };
 
-<<<<<<< HEAD
   type InterFaceInfoInvokeRequest = {
     current?: number;
     id?: number;
@@ -192,12 +169,6 @@ declare namespace API {
     userRequestParams?: string;
   };
 
-=======
-<<<<<<< HEAD
->>>>>>> 7422dd8 (前端框架构建完成 用户信息获取 接口信息获取完成)
-=======
->>>>>>> dea6872 (前端框架构建完成 用户信息获取 接口信息获取完成)
->>>>>>> 06b7559 (前端框架构建完成 用户信息获取 接口信息获取完成)
   type InterfaceInfoQueryRequest = {
     current?: number;
     description?: string;
@@ -225,7 +196,6 @@ declare namespace API {
     url?: string;
   };
 
-<<<<<<< HEAD
   type InterfaceInfoVO = {
     createTime?: string;
     description?: string;
@@ -243,12 +213,6 @@ declare namespace API {
     userId?: number;
   };
 
-=======
-<<<<<<< HEAD
->>>>>>> 7422dd8 (前端框架构建完成 用户信息获取 接口信息获取完成)
-=======
->>>>>>> dea6872 (前端框架构建完成 用户信息获取 接口信息获取完成)
->>>>>>> 06b7559 (前端框架构建完成 用户信息获取 接口信息获取完成)
   type LoginUserVO = {
     createTime?: string;
     id?: number;
@@ -389,26 +353,12 @@ declare namespace API {
   };
 
   type User = {
-<<<<<<< HEAD
     accessKey?: string;
-=======
-<<<<<<< HEAD
->>>>>>> 7422dd8 (前端框架构建完成 用户信息获取 接口信息获取完成)
-=======
->>>>>>> dea6872 (前端框架构建完成 用户信息获取 接口信息获取完成)
->>>>>>> 06b7559 (前端框架构建完成 用户信息获取 接口信息获取完成)
     createTime?: string;
     id?: number;
     isDelete?: number;
     mpOpenId?: string;
-<<<<<<< HEAD
     secretKey?: string;
-=======
-<<<<<<< HEAD
->>>>>>> 7422dd8 (前端框架构建完成 用户信息获取 接口信息获取完成)
-=======
->>>>>>> dea6872 (前端框架构建完成 用户信息获取 接口信息获取完成)
->>>>>>> 06b7559 (前端框架构建完成 用户信息获取 接口信息获取完成)
     unionId?: string;
     updateTime?: string;
     userAccount?: string;
@@ -470,19 +420,10 @@ declare namespace API {
   };
 
   type UserVO = {
-<<<<<<< HEAD
     accessKey?: string;
     createTime?: string;
     id?: number;
     secretKey?: string;
-=======
-    createTime?: string;
-    id?: number;
-<<<<<<< HEAD
->>>>>>> 7422dd8 (前端框架构建完成 用户信息获取 接口信息获取完成)
-=======
->>>>>>> dea6872 (前端框架构建完成 用户信息获取 接口信息获取完成)
->>>>>>> 06b7559 (前端框架构建完成 用户信息获取 接口信息获取完成)
     userAvatar?: string;
     userName?: string;
     userProfile?: string;
